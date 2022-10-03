@@ -18,10 +18,10 @@ class CustomButton extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.lightBlue,
-            blurRadius: 10,
+            blurRadius: 20,
             offset: Offset(
-              8,
-              4,
+              2,
+              2,
             ),
           ),
         ],
@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
           minimumSize: Size(
-            width,
+            width / 2,
             50,
           ),
         ),

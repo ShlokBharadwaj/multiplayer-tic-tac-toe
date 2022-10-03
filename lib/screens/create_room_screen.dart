@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/responsive/responsive.dart';
 import 'package:tic_tac_toe/widgets/custom_button.dart';
 import 'package:tic_tac_toe/widgets/custom_text.dart';
 import 'package:tic_tac_toe/widgets/custom_textfield.dart';
@@ -25,37 +26,39 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const CustomText(
-              shadows: [
-                Shadow(
-                  blurRadius: 30.0,
-                  color: Colors.lightBlue,
-                  offset: Offset(5.0, 5.0),
-                )
-              ],
-              text: 'Create Room',
-              fontSize: 70,
-            ),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
-            CustomTextField(
-              controller: _createRoomNameController,
-              hintText: 'Enter Room Name',
-            ),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
-            CustomButton(onTap: () {}, text: 'Create'),
-          ],
+      body: Responsive(
+        child: Container(
+          margin: const EdgeInsets.symmetric(
+            horizontal: 30,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CustomText(
+                shadows: [
+                  Shadow(
+                    blurRadius: 30.0,
+                    color: Colors.lightBlue,
+                    offset: Offset(5.0, 5.0),
+                  )
+                ],
+                text: 'Create Room',
+                fontSize: 70,
+              ),
+              SizedBox(
+                height: size.height * 0.04,
+              ),
+              CustomTextField(
+                controller: _createRoomNameController,
+                hintText: 'Enter Room Name',
+              ),
+              SizedBox(
+                height: size.height * 0.04,
+              ),
+              CustomButton(onTap: () {}, text: 'Create'),
+            ],
+          ),
         ),
       ),
     );

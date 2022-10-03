@@ -27,7 +27,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.symmetric(
-          horizontal: 20,
+          horizontal: 30,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -45,14 +45,14 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               fontSize: 70,
             ),
             SizedBox(
-              height: size.height * 0.08,
+              height: size.height * 0.04,
             ),
             CustomTextField(
               controller: _createRoomNameController,
               hintText: 'Enter Room Name',
             ),
             SizedBox(
-              height: size.height * 0.08,
+              height: size.height * 0.04,
             ),
             CustomButton(onTap: () {}, text: 'Create'),
           ],

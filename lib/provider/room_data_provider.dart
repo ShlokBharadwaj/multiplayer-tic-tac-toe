@@ -6,15 +6,15 @@ class RoomDataProvider extends ChangeNotifier {
 
   Players _player1 = Players(
     gamingName: '',
-    socketId: '',
-    points: 0.0,
+    socketID: '',
+    points: 0,
     playerType: 'X',
   );
 
   Players _player2 = Players(
     gamingName: '',
-    socketId: '',
-    points: 0.0,
+    socketID: '',
+    points: 0,
     playerType: 'O',
   );
 

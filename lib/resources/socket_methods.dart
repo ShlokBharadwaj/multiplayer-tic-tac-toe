@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:tic_tac_toe/provider/room_data_provider.dart';
 import 'package:tic_tac_toe/resources/socket_client.dart';
 import 'package:tic_tac_toe/screens/game_screen.dart';
+import 'package:tic_tac_toe/utils/utils.dart';
 
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;
@@ -43,6 +45,12 @@ class SocketMethods {
       Provider.of<RoomDataProvider>(context, listen: false)
           .updateRoomData(room);
       Navigator.pushNamed(context, GameScreen.routeName);
+    });
+  }
+
+  void errorOccuredListener(BuildContext context) {
+    _socketClient.on('error-occured', (error) {
+      showSnackBar(context, error);
     });
   }
 }

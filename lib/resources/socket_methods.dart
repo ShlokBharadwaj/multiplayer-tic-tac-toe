@@ -48,6 +48,13 @@ class SocketMethods {
     });
   }
 
+  void updateRoomListener(BuildContext context) {
+    _socketClient.on('updateRoom', (data) {
+      Provider.of<RoomDataProvider>(context, listen: false)
+          .updateRoomData(data);
+    });
+  }
+
   void errorOccuredListener(BuildContext context) {
     _socketClient.on('Error-Occured', (error) {
       showSnackBar(context, error);

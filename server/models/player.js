@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const playerSchema = new mongoose.Schema({
-    roomName: {
+    gamingName: {
         type: String,
         trim: true,
     },

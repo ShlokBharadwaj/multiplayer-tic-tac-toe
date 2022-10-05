@@ -35,6 +35,10 @@ class _WaitingLobbyState extends State<WaitingLobby> {
       children: [
         const Text(
           'Waiting for a player to join...',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         const SizedBox(
           height: 20,

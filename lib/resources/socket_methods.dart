@@ -6,11 +6,27 @@ import 'package:tic_tac_toe/screens/game_screen.dart';
 
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;
+
   void createRoom(String roomName) {
     if (roomName.isNotEmpty) {
-      _socketClient.emit('create-room', {
-        'roomName': roomName,
-      });
+      _socketClient.emit(
+        'create-room',
+        {
+          'roomName': roomName,
+        },
+      );
+    }
+  }
+
+  void joinRoom(String gamingName, String gameId) {
+    if (gamingName.isNotEmpty && gameId.isNotEmpty) {
+      _socketClient.emit(
+        'join-room',
+        {
+          'gamingName': gamingName,
+          'gameId': gameId,
+        },
+      );
     }
   }
 

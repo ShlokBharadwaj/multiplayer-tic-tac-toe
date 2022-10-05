@@ -9,12 +9,12 @@ import 'package:tic_tac_toe/utils/utils.dart';
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;
 
-  void createRoom(String roomName) {
-    if (roomName.isNotEmpty) {
+  void createRoom(String gamingName) {
+    if (gamingName.isNotEmpty) {
       _socketClient.emit(
         'create-room',
         {
-          'roomName': roomName,
+          'gamingName': gamingName,
         },
       );
     }
@@ -51,6 +51,15 @@ class SocketMethods {
   void errorOccuredListener(BuildContext context) {
     _socketClient.on('Error-Occured', (error) {
       showSnackBar(context, error);
+    });
+  }
+
+  void updatePlayersStateListener(BuildContext context) {
+    _socketClient.on('updatePlayers', (playerData) {
+      Provider.of<RoomDataProvider>(context, listen: false)
+          .updatePlayer1(playerData[0]);
+      Provider.of<RoomDataProvider>(context, listen: false)
+          .updatePlayer2(playerData[1]);
     });
   }
 }

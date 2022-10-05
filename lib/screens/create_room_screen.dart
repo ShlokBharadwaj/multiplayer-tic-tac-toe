@@ -59,7 +59,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               ),
               CustomTextField(
                 controller: _createRoomNameController,
-                hintText: 'Enter Room Name',
+                hintText: 'Enter your Gaming name',
               ),
               SizedBox(
                 height: size.height * 0.04,

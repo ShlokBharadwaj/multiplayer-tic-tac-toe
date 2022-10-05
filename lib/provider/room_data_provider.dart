@@ -27,4 +27,14 @@ class RoomDataProvider extends ChangeNotifier {
     _roomData = roomData;
     notifyListeners();
   }
+
+  void updatePlayer1(Map<String, dynamic> player1Data) {
+    _player1 = Players.fromMap(player1Data);
+    notifyListeners();
+  }
+
+  void updatePlayer2(Map<String, dynamic> player2Data) {
+    _player2 = Players.fromMap(player2Data);
+    notifyListeners();
+  }
 }

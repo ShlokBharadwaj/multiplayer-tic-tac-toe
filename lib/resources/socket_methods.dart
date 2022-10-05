@@ -37,4 +37,12 @@ class SocketMethods {
       Navigator.pushNamed(context, GameScreen.routeName);
     });
   }
+
+  void roomJoinedListener(BuildContext context) {
+    _socketClient.on('room-joined', (room) {
+      Provider.of<RoomDataProvider>(context, listen: false)
+          .updateRoomData(room);
+      Navigator.pushNamed(context, GameScreen.routeName);
+    });
+  }
 }

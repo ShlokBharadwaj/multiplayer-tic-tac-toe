@@ -49,7 +49,7 @@ class SocketMethods {
   }
 
   void errorOccuredListener(BuildContext context) {
-    _socketClient.on('error-occured', (error) {
+    _socketClient.on('Error-Occured', (error) {
       showSnackBar(context, error);
     });
   }

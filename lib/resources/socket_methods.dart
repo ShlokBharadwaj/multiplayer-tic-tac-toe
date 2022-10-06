@@ -99,4 +99,16 @@ class SocketMethods {
       GameMethods().checkWinner(context, socketClient);
     });
   }
+
+  void pointIncreaseListener(BuildContext context) {
+    _socketClient.on('increasePoints', (playerData) {
+      var roomDataProvider =
+          Provider.of<RoomDataProvider>(context, listen: false);
+      if (roomDataProvider.player1.socketID == playerData['socketID']) {
+        roomDataProvider.updatePlayer1(playerData);
+      } else {
+        roomDataProvider.updatePlayer2(playerData);
+      }
+    });
+  }
 }

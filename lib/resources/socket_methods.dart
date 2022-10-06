@@ -81,4 +81,16 @@ class SocketMethods {
           .updatePlayer2(playerData[1]);
     });
   }
+
+  void tappedListener(BuildContext context) {
+    _socketClient.on('tapped', (data) {
+      RoomDataProvider roomDataProvider =
+          Provider.of<RoomDataProvider>(context, listen: false);
+      roomDataProvider.updateDisplayElements(
+        data['index'],
+        data['choice'],
+      );
+      roomDataProvider.updateRoomData(data['room']);
+    });
+  }
 }

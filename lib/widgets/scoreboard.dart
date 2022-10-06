@@ -45,7 +45,7 @@ class Scoreboard extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.red,
+                  color: Colors.lightBlue,
                 ),
               ),
               Text(

@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 import 'package:tic_tac_toe/provider/room_data_provider.dart';
+import 'package:tic_tac_toe/resources/game_methods.dart';
 import 'package:tic_tac_toe/resources/socket_client.dart';
 import 'package:tic_tac_toe/screens/game_screen.dart';
 import 'package:tic_tac_toe/utils/utils.dart';
@@ -94,6 +95,8 @@ class SocketMethods {
         data['choice'],
       );
       roomDataProvider.updateRoomData(data['room']);
+
+      GameMethods().checkWinner(context, socketClient);
     });
   }
 }

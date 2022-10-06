@@ -14,6 +14,7 @@ class RoomDataProvider extends ChangeNotifier {
     '',
     '',
   ];
+  int _filledBoxes = 0;
 
   Players _player1 = Players(
     gamingName: '',
@@ -47,6 +48,12 @@ class RoomDataProvider extends ChangeNotifier {
 
   void updatePlayer2(Map<String, dynamic> player2Data) {
     _player2 = Players.fromMap(player2Data);
+    notifyListeners();
+  }
+
+  void updateDisplayElements(int index, String choice) {
+    _displayElements[index] = choice;
+    _filledBoxes += 1;
     notifyListeners();
   }
 }

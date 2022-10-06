@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:socket_io_client/socket_io_client.dart';
 import 'package:tic_tac_toe/provider/room_data_provider.dart';
 import 'package:tic_tac_toe/resources/socket_client.dart';
 import 'package:tic_tac_toe/screens/game_screen.dart';
@@ -8,6 +9,8 @@ import 'package:tic_tac_toe/utils/utils.dart';
 
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;
+
+  Socket get socketClient => _socketClient;
 
   void createRoom(String gamingName) {
     if (gamingName.isNotEmpty) {

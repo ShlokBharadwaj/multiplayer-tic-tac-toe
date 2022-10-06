@@ -32,6 +32,18 @@ class SocketMethods {
     }
   }
 
+  void tapOnBox(int index, String roomID, List<String> displayElements) {
+    if (displayElements[index] == '') {
+      _socketClient.emit(
+        'tap',
+        {
+          'index': index,
+          'roomID': roomID,
+        },
+      );
+    }
+  }
+
   void roomCreatedListener(BuildContext context) {
     _socketClient.on('room-created', (room) {
       Provider.of<RoomDataProvider>(context, listen: false)

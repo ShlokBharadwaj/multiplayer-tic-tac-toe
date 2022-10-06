@@ -3,6 +3,17 @@ import 'package:tic_tac_toe/models/players.dart';
 
 class RoomDataProvider extends ChangeNotifier {
   Map<String, dynamic> _roomData = {};
+  List<String> _displayElements = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+  ];
 
   Players _player1 = Players(
     gamingName: '',
@@ -22,6 +33,7 @@ class RoomDataProvider extends ChangeNotifier {
 
   Players get player1 => _player1;
   Players get player2 => _player2;
+  List<String> get displayElements => _displayElements;
 
   void updateRoomData(Map<String, dynamic> roomData) {
     _roomData = roomData;

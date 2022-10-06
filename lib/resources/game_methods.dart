@@ -5,6 +5,15 @@ import 'package:tic_tac_toe/provider/room_data_provider.dart';
 import 'package:tic_tac_toe/utils/utils.dart';
 
 class GameMethods {
+  void clearBoard(BuildContext context) {
+    RoomDataProvider roomDataProvider =
+        Provider.of<RoomDataProvider>(context, listen: false);
+    for (int i = 0; i < roomDataProvider.displayElements.length; i++) {
+      roomDataProvider.updateDisplayElements(i, '');
+    }
+    roomDataProvider.setFilledBoxestoZero();
+  }
+
   void checkWinner(BuildContext context, Socket socketClient) {
     RoomDataProvider roomDataProvider =
         Provider.of<RoomDataProvider>(context, listen: false);

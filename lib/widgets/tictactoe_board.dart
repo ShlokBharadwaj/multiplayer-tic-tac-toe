@@ -57,7 +57,7 @@ class _TicTacToeState extends State<TicTacToe> {
                 ),
                 child: Center(
                   child: AnimatedSize(
-                    duration: const Duration(milliseconds: 500),
+                    duration: const Duration(milliseconds: 250),
                     child: Text(
                       roomDataProvider.displayElements[index],
                       style: TextStyle(

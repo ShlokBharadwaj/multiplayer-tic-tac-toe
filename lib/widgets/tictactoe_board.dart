@@ -56,21 +56,25 @@ class _TicTacToeState extends State<TicTacToe> {
                   color: Colors.white24,
                 ),
                 child: Center(
-                  child: Text(
-                    roomDataProvider.displayElements[index],
-                    style: TextStyle(
-                      fontSize: 100,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 10.0,
-                          color: roomDataProvider.displayElements[index] == 'O'
-                              ? Colors.blue
-                              : Colors.red,
-                          offset: const Offset(5.0, 5.0),
-                        ),
-                      ],
+                  child: AnimatedSize(
+                    duration: const Duration(milliseconds: 500),
+                    child: Text(
+                      roomDataProvider.displayElements[index],
+                      style: TextStyle(
+                        fontSize: 100,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color:
+                                roomDataProvider.displayElements[index] == 'O'
+                                    ? Colors.blue
+                                    : Colors.red,
+                            offset: const Offset(5.0, 5.0),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

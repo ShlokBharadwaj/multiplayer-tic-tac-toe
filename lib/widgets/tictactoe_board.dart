@@ -13,6 +13,12 @@ class TicTacToe extends StatefulWidget {
 class _TicTacToeState extends State<TicTacToe> {
   final SocketMethods _socketMethods = SocketMethods();
 
+  @override
+  void initState() {
+    _socketMethods.tappedListener(context);
+    super.initState();
+  }
+
   void tapped(int index, RoomDataProvider roomDataProvider) {
     _socketMethods.tapOnBox(
       index,
@@ -46,9 +52,9 @@ class _TicTacToeState extends State<TicTacToe> {
                 border: Border.all(),
                 color: Colors.white24,
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
-                  'X',
+                  roomDataProvider.displayElements[index],
                   style: TextStyle(
                     fontSize: 100,
                     color: Colors.white,
@@ -56,8 +62,10 @@ class _TicTacToeState extends State<TicTacToe> {
                     shadows: [
                       Shadow(
                         blurRadius: 10.0,
-                        color: Colors.lightBlue,
-                        offset: Offset(5.0, 5.0),
+                        color: roomDataProvider.displayElements[index] == 'O'
+                            ? Colors.blue
+                            : Colors.red,
+                        offset: const Offset(5.0, 5.0),
                       ),
                     ],
                   ),

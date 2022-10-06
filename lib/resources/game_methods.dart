@@ -75,5 +75,24 @@ class GameMethods {
         roomDataProvider.displayElements[2] != '') {
       winner = roomDataProvider.displayElements[2];
     }
+    // draw
+    else if (roomDataProvider.filledBoxes == 9) {
+      winner = '';
+    }
+
+    // winner
+    if (winner != '') {
+      if (roomDataProvider.player1.playerType == winner) {
+        socketClient.emit('winner', {
+          'winnerSocketID': roomDataProvider.player1.socketID,
+          'roomID': roomDataProvider.roomData['_id'],
+        });
+      } else {
+        socketClient.emit('winner', {
+          'winnerSocketID': roomDataProvider.player2.socketID,
+          'roomID': roomDataProvider.roomData['_id'],
+        });
+      }
+    }
   }
 }

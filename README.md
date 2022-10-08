@@ -4,7 +4,7 @@
 
 ***
 # APK: 
-[Multiplayer TicTacToe](https://github.com/ShlokBharadwaj/no-notes/releases/tag/v1.0.0).
+[Multiplayer TicTacToe](https://github.com/ShlokBharadwaj/multiplayer-tic-tac-toe/releases/tag/v1.0.0).
 
 
 # Screenshots: <br>

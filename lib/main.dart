@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           GameScreen.routeName: (context) => const GameScreen(),
         },
         initialRoute: MainMenuScreen.routeName,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

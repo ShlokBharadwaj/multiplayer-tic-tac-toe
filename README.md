@@ -1,16 +1,30 @@
-# multiplayer-tic-tac-toe
+# NoNotes
 
-A new Flutter project.
+## Note taking application made in Flutter with Firebase backend. <br>
 
-## Getting Started
+***
+# APK: 
+[Multiplayer TicTacToe](https://github.com/ShlokBharadwaj/no-notes/releases/tag/v1.0.0).
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshots: <br>
+<table style={border: "none"}>
+<tr>
+<td><img src="assets/screenshots/homescreen_redmi.png" alt="Game Homescreen"></td>
+<td><img src="assets/screenshots/create_room_name.png" alt="Game room creation screen"></td>
+<td><img src="assets/screenshots/create_room_copy_id.png" alt="Copy Game Id and send to friend"></td>
+</tr>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<tr>
+<td><img src="assets/screenshots/join_room.png" alt="Join room screen"></td>
+<td><img src="assets/screenshots/join_room_id_name.png" alt="Join room crediantials from friend"></td>
+<td><img src="assets/screenshots/already_2_players.png" alt="No more than 2 players can join"></td>
+</tr>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<tr>
+<td><img src="assets/screenshots/host_tictactoe.png" alt="One who creates the room starts the game"></td>
+<td><img src="assets/screenshots/host_win.png" alt="Host winner"></td>
+<td><img src="assets/screenshots/winner_tictactoe.png" alt="Friend winner"></td>
+</tr>
+
+</table>

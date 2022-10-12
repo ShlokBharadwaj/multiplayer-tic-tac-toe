@@ -1,6 +1,7 @@
-# NoNotes
+# multiplayer-tic-tac-toe
 
-## Note taking application made in Flutter with Firebase backend. <br>
+
+## Simple Multiplayer Tic-tac-toe game made with Flutter, Node, Express and Socket.io. <br>
 
 ***
 # APK: 
